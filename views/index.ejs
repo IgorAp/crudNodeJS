@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- As 3 meta tags acima *devem* vir em primeiro lugar dentro do `head`; qualquer outro conteúdo deve vir *após* essas tags -->
+    <title>Lista de Clientes</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Lista de Clientes </h1>
+        </div>
+      </div>
+      <div class="row">
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+                <td><strong>Nome</strong></td>
+                <td><strong>Idade</strong></td>
+                <td><strong>Ações</strong></td>
+            </tr>
+          </thead>
+          <tbody>
+              <%if(!docs || docs.length ==0){%>
+                <tr>
+                  <td>Nenhum cliente cadastrado</td>
+                </tr>
+                <% } else{ 
+                  
+                  docs.forEach(function(c){
+                  %>
+                    <tr>
+                      <td>
+                        <%=c.nome %>
+                      </td>
+                      <td>
+                          <%=c.idade %>
+                      </td>
+                      <td>
+                        <a href="/edit/<%=c._id %>">Editar</a> <a href="/del/<%=c._id %>"> Excluir</a>
+                      </td>
+                    </tr>
+                <% })
+                  }
+                %>
+          </tbody>
+        </table>
+        <a class="btn btn-default" href="http://localhost:3000/new">Cadastrar</a>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </body>
+</html>

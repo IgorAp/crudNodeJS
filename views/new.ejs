@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- As 3 meta tags acima *devem* vir em primeiro lugar dentro do `head`; qualquer outro conteúdo deve vir *após* essas tags -->
+    <title>Cadastro de Clientes</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Cadastro de Clientes</h1>
+        </div>
+      </div>
+      <div class="row">
+       <form action="<%=action %>" method="post">
+           <div class="form-group">
+               <label for="">Nome</label>
+               <input value="<%=doc.nome%>" class="form-control" type="text" placeholder="Digite aqui seu nome" name="nome">
+           </div>
+           <div class="form-group">
+                <label for="">Idade</label>
+                <input value="<%=doc.idade%>" class="form-control" type="text" placeholder="Digite sua idade aqui" name="idade">
+           </div>
+           <br>
+           <div class="form-group">
+                <a href="http://localhost:3000/" class="btn btn-default">Cancelar</a>
+                <input type="submit" value="Salvar" class="btn btn-subimit">
+           </div>
+       </form>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </body>
+</html>
